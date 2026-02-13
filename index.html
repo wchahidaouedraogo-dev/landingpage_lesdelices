@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Les Délices | Cantine Campus Premium</title>
+    
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        :root {
+            --main-blue: #0A5361; 
+            --accent-yellow: #FFC107; 
+            --bg-light: #F8F9FA;
+            --text-dark: #212529;
+        }
+
+        body { font-family: 'Poppins', sans-serif; color: var(--text-dark); background-color: white; }
+
+        /* Navbar */
+        .navbar { background: var(--main-blue) !important; padding: 20px 0; }
+        .navbar-brand, .nav-link { color: white !important; font-weight: 500; }
+        .btn-contact-top { 
+            background: #27ae60; 
+            color: white; 
+            border-radius: 8px; 
+            padding: 8px 20px;
+            text-decoration: none;
+            font-size: 0.9rem;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: var(--main-blue);
+            color: white;
+            padding: 100px 0 150px 0;
+            position: relative;
+            overflow: hidden;
+        }
+        .hero-shape {
+            position: absolute;
+            bottom: -2px;
+            left: 0;
+            width: 100%;
+            fill: white;
+        }
+
+        .btn-explore {
+            background: var(--accent-yellow);
+            color: var(--text-dark);
+            font-weight: 700;
+            border-radius: 12px;
+            padding: 15px 35px;
+            border: none;
+            transition: 0.3s;
+            text-decoration: none;
+        }
+        .btn-explore:hover { transform: scale(1.05); background: #eab106; color: var(--text-dark); }
+
+        /* Barre de réservation rapide */
+        .booking-bar {
+            background: white;
+            padding: 30px;
+            border-radius: 20px;
+            box-shadow: 0 15px 40px rgba(0,0,0,0.1);
+            margin-top: -80px;
+            position: relative;
+            z-index: 10;
+        }
+
+        /* Cartes de Plats */
+        .section-title { font-weight: 700; margin-bottom: 40px; }
+        .section-title span { color: #27ae60; }
+
+        .card-dish {
+            border: none;
+            border-radius: 30px;
+            padding: 20px;
+            transition: 0.3s;
+            background: #fff;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+            text-align: center;
+            height: 100%;
+        }
+        .card-dish:hover { transform: translateY(-10px); }
+        .dish-img-container {
+            width: 180px;
+            height: 180px;
+            margin: -60px auto 20px auto;
+            border-radius: 50%;
+            overflow: hidden;
+            border: 8px solid white;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+        }
+        .dish-img-container img { width: 100%; height: 100%; object-fit: cover; }
+        
+        .price-tag { color: #27ae60; font-weight: 700; font-size: 1.4rem; }
+        .btn-add {
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            padding: 5px 20px;
+            color: #888;
+            text-decoration: none;
+            font-size: 0.8rem;
+            transition: 0.2s;
+        }
+        .btn-add:hover { background: var(--bg-light); color: var(--main-blue); }
+
+        /* Défi Gourmand */
+        .section-defi { background: #fff; padding: 80px 0; }
+        .defi-box {
+            background: #fdf7f2;
+            border-radius: 30px;
+            padding: 40px;
+            border-left: 10px solid var(--accent-yellow);
+        }
+
+        /* Footer */
+        footer {
+            background: #f8f9fa;
+            padding: 40px 0 20px 0;
+            border-top: 1px solid #eee;
+        }
+
+        .whatsapp-float {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background: #25d366;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 30px;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+            z-index: 1000;
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+
+    <a href="https://wa.me/212XXXXXXXXX" class="whatsapp-float"><i class="fab fa-whatsapp"></i></a>
+
+    <nav class="navbar navbar-expand-lg">
+        <div class="container">
+            <a class="navbar-brand fw-bold" href="#">LesDélices <span style="color:var(--accent-yellow)">Campus</span></a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto align-items-center">
+                    <li class="nav-item"><a class="nav-link" href="#packs">Le Menu</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#concept">Concept</a></li>
+                    <li class="nav-item ms-lg-4"><a class="btn-contact-top" href="https://wa.me/212XXXXXXXXX">Contactez-nous</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <section class="hero text-center text-lg-start">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6">
+                    <h1 class="display-3 fw-bold mb-4">Nous servons les saveurs <br>que vous aimez</h1>
+                    <p class="lead mb-5 opacity-75">Une cuisine locale authentique, saine et préparée avec passion. Réservez votre part 3h à l'avance.</p>
+                    <div class="d-flex flex-column flex-sm-row gap-3">
+                        <a href="#packs" class="btn btn-explore">Explorer le menu</a>
+                        <a href="#concept" class="btn btn-outline-light border-0"><i class="fas fa-play-circle me-2"></i> Comment commander ?</a>
+                    </div>
+                </div>
+                <div class="col-lg-6 d-none d-lg-block text-center">
+                    <img src="imagehero.png" class="img-fluid rounded-circle shadow-lg" style="width: 80%;" alt="Plat gourmand">
+                </div>
+            </div>
+        </div>
+        <svg class="hero-shape" viewBox="0 0 1440 320"><path d="M0,224L80,213.3C160,203,320,181,480,181.3C640,181,800,203,960,197.3C1120,192,1280,160,1360,144L1440,128L1440,320L1360,320C1280,320,1120,320,960,320C800,320,640,320,480,320C320,320,160,320,80,320L0,320Z"></path></svg>
+    </section>
+
+    <div class="container">
+        <div class="booking-bar">
+            <div class="row align-items-center text-center text-md-start g-3">
+                <div class="col-md-3 border-md-end">
+                    <small class="text-muted d-block">Quantité</small>
+                    <h6 class="fw-bold mb-0">1 Personne <i class="fas fa-chevron-down ms-2 small"></i></h6>
+                </div>
+                <div class="col-md-3 border-md-end">
+                    <small class="text-muted d-block">Date</small>
+                    <h6 class="fw-bold mb-0">Aujourd'hui <i class="fas fa-chevron-down ms-2 small"></i></h6>
+                </div>
+                <div class="col-md-3 border-md-end">
+                    <small class="text-muted d-block">Heure de retrait</small>
+                    <h6 class="fw-bold mb-0">12:00 <i class="fas fa-chevron-down ms-2 small"></i></h6>
+                </div>
+                <div class="col-md-3 text-center">
+                    <button class="btn btn-success w-100 rounded-3 py-2 fw-bold">Réserver </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <section id="packs" class="py-5" style="margin-top: 80px;">
+        <div class="container text-center">
+            <h2 class="section-title">Nos Plats <span>Populaires</span></h2>
+            <div class="row g-5 mt-5">
+                <div class="col-md-4">
+                    <div class="card-dish">
+                        <div class="dish-img-container">
+                            <img src="Designer (2).png" alt="Beignets">
+                        </div>
+                        <h5 class="fw-bold mt-3">Rupture Classique</h5>
+                        <p class="small text-muted">Bouillie onctueuse, beignets (sucrés/salés) et jus local au choix.</p>
+                        <div class="d-flex justify-content-between align-items-center mt-4">
+                            <span class="price-tag">2500 FCFA</span>
+                            <a href="https://wa.me/212XXXXXXXXX" class="btn-add">Commander</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card-dish">
+                        <div class="dish-img-container">
+                            <img src="https://i.pinimg.com/1200x/11/bc/c7/11bcc7aa7fe0eed795f9122713e98dac.jpg" alt="Galettes">
+                        </div>
+                        <h5 class="fw-bold mt-3"> Beignets</h5>
+                        <p class="small text-muted">Galettes traditionnelles</p>
+                        <div class="d-flex justify-content-between align-items-center mt-4">
+                            <span class="price-tag">1000 FCFA</span>
+                            <a href="https://wa.me/212XXXXXXXXX" class="btn-add">Commander</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card-dish">
+                        <div class="dish-img-container">
+                            <img src="https://images.unsplash.com/photo-1546069901-ba9599a7e63c?auto=format&fit=crop&w=400&q=80" alt="Special">
+                        </div>
+                        <h5 class="fw-bold mt-3">Assiette Spéciale</h5>
+                        <p class="small text-muted">Menu personnalisé</p>
+                        <div class="d-flex justify-content-between align-items-center mt-4">
+                            <span class="price-tag">3000 FCFA</span>
+                            <a href="https://wa.me/212XXXXXXXXX" class="btn-add">Commander</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="defi" class="section-defi">
+        <div class="container">
+            <div class="defi-box shadow-sm">
+                <div class="row align-items-center text-center text-md-start">
+                    <div class="col-md-8">
+                        <h2 class="fw-bold mb-3">💬 Lancez votre défi gourmand</h2>
+                        <p class="mb-0">Motivez 20 amis et débloquez un menu spécial à prix réduit ! <br>Parfait pour les associations et les groupes d'étude.</p>
+                    </div>
+                    <div class="col-md-4 text-md-end mt-4 mt-md-0">
+                        <a href="https://wa.me/212XXXXXXXXX" class="btn btn-dark px-5 py-3 rounded-pill fw-bold">Proposer un défi</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container text-center">
+            <h5 class="fw-bold var-main-blue mb-3">Les Délices Campus</h5>
+            <p class="small text-muted mb-4">Qualité, hygiène et goût local directement à votre portée.</p>
+            <div class="social-icons mb-4">
+                <a href="#" class="text-dark mx-2"><i class="fab fa-facebook-f"></i></a>
+                <a href="#" class="text-dark mx-2"><i class="fab fa-instagram"></i></a>
+            </div>
+            <p class="mb-0 small text-muted font-monospace">© 2026 Les Délices Campus. Tous droits réservés.</p>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
